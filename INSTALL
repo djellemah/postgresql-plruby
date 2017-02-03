@@ -1,0 +1,11 @@
+To put the files where postgres can find them, say
+
+  sudo cp extension/* $(pg_config --sharedir)/extension/
+  sudo cp src/plruby.so $(pg_config --libdir)/
+
+Then as psql -Upostgres <your_db> say
+
+  CREATE EXTENSION plruby;
+
+Then you can create ruby functions in postgres.
+
